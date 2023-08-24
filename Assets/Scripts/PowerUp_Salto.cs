@@ -17,8 +17,8 @@ public class PowerUp_Salto : MonoBehaviour
             playerController.m_JumpForce = fuerzaSalto;
 
             //eliminar "de mentiras"
-            //GetComponent<Renderer>().enabled = false;
-            //GetComponent<Collider2D>().enabled = false;
+            GetComponent<Renderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
 
             Invoke(nameof(ResetSalto), tiempoSalto);
         }
@@ -29,6 +29,6 @@ public class PowerUp_Salto : MonoBehaviour
         CharacterController2D playerController = FindObjectOfType<CharacterController2D>();
         playerController.m_JumpForce = fuerzaOriginal;
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
